@@ -1,0 +1,12 @@
+<div>
+    <h1> Countries List </h1>
+
+    <div style="display:flex; flex-wrap: wrap;">
+        <div style="border:solid 1px black; margin:10px; padding:10px" *ngFor="let country of countries; let i = index">
+            <h1>{{ country.name }}</h1>
+            <h3 style="color:red" *ngIf="country.borders && !country.borders.length"> No Borders </h3>
+            <h3 style="color:red" *ngIf="!isBorders(country.borders,i)"> No Borders {{i}}</h3>
+        </div>
+    </div>
+
+</div>
