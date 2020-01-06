@@ -4,7 +4,7 @@ const users = ["silvia", "adir", "sivan"];
 @Component({
     selector: "app-header",
     templateUrl: "./header.component.html",
-    styleUrls: ["./header.component.css"]
+    styleUrls: ["./header.component.css"],
 })
 export class AppHeader {
     public title: string;
