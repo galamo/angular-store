@@ -20,9 +20,10 @@ export class CountriesListComponent {
     moreThenTwoCurrencies(country: any) {
         return country.currencies && country.currencies.length > 1
     }
-    deleteMe(index: number) {
-        //use alpha3code
-        this.countries.splice(index, 1)
+    deleteMe(countryName: string) {
+        const countryIndex = this.countries.findIndex(country => country.name === countryName)
+        if (countryIndex < 0) return;
+        this.countries.splice(countryIndex, 1)
         this.selectedCountry = -1;
     }
     selectCountry(country: any) {

@@ -1,4 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+
+
+const INITIAL_WIDTH = 50
 
 @Component({
     selector: 'app-country',
@@ -6,12 +10,24 @@ import { Component, OnInit, Input } from '@angular/core';
     styleUrls: ['./country.component.css']
 })
 export class CountryComponent implements OnInit {
-    @Input('country-object') countryObj: any
-
-    constructor() { console.log(this.countryObj, "constructor") }
+    @Input() countryObj: any
+    @Output() delEvent = new EventEmitter<any>()
+    public flagWidth: number
+    constructor() { this.flagWidth = INITIAL_WIDTH }
 
     ngOnInit() {
-        console.log(this.countryObj, "ngOnInit")
+    }
+
+    delete() {
+        this.delEvent.emit(this.countryObj.name)
+    }
+
+    changeFlagSize(width: number) {
+        this.flagWidth = width
+    }
+
+    selectCountry() {
+        this.countryObj.isSelected = !this.countryObj.isSelected
     }
 
 }
