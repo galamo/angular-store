@@ -10,7 +10,7 @@
             {{currency.code}} {{currency.symbol}}
         </li>
     </ol>
-    <button (click)="delete()">
+    <button (click)="this.delEvent.emit(countryObj.name)">
         <img width="40"
             src="https://cdn.imgbin.com/1/15/8/imgbin-button-icon-delete-button-delete-logo-4kMy1Q3bUbUNbVPKvS0MTiZBe.jpg" />
     </button>
