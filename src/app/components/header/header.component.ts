@@ -9,12 +9,21 @@ const users = ["silvia", "adir", "sivan"];
 export class AppHeader {
     public title: string;
     public clicks: number
+    public currentColor: string
+    public fontSize: number;
     constructor() {
-        this.title = "Store App";
+        this.title = "Countries Application";
         this.clicks = 10
+        this.currentColor = "green"
+        this.fontSize = 40
     }
 
     changeHeader = (newHeader: string) => {
+        this.currentColor = "blue"
         this.title = newHeader
+    }
+
+    changeSize = (size: number) => {
+        this.fontSize = this.fontSize + size;
     }
 }
