@@ -13,7 +13,12 @@ export class CountryComponent implements OnInit {
     @Input() countryObj: any
     @Output() delEvent = new EventEmitter<any>()
     public flagWidth: number
-    constructor() { this.flagWidth = INITIAL_WIDTH }
+    public comment: string;
+    public comments: Array<string>
+    constructor() {
+        this.flagWidth = INITIAL_WIDTH
+        this.comments = [];
+    }
 
     ngOnInit() {
     }
@@ -24,6 +29,10 @@ export class CountryComponent implements OnInit {
 
     changeFlagSize(width: number) {
         this.flagWidth = width
+    }
+    addComment() {
+        this.comments.push(this.comment)
+        this.comment = "";
     }
 
     selectCountry() {
