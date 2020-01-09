@@ -2,6 +2,7 @@
     <h1 [style.fontSize.px]="fontSize" [style.color]="currentColor">
         {{ title }}
     </h1>
+    <button *ngFor="let color of ['red','green','yellow']" (click)="changeColorTo(color)">{{color}}</button>
     <h2>{{ clicks }}</h2>
     <button (click)="changeHeader('new header')"> Change Header </button>
     <button (click)="changeSize(10)">

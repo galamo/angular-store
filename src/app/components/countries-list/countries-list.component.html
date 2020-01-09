@@ -2,7 +2,8 @@
     <h1> Countries</h1>
     <h2> selected Country: {{selectedCountry}} </h2>
     <div style="display:flex;flex-wrap: wrap;">
-        <div class="card" *ngFor="let country of countries; let i = index"
+        <app-country *ngFor="let country of countries" [my-country]="country"></app-country>
+        <!-- <div class="card" *ngFor="let country of countries; let i = index"
             [ngClass]="{'selected-country': country.isSelected}">
             <h2 class="select-button" (click)="selectCountry(country)">{{i}} {{  country.name }}</h2> <button
                 (click)="deleteMe(i)">X</button>
@@ -15,6 +16,6 @@
                     </li>
                 </ol>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

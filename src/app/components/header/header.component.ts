@@ -22,7 +22,9 @@ export class AppHeader {
         this.currentColor = "blue"
         this.title = newHeader
     }
-
+    changeColorTo(color: string) {
+        this.currentColor = color
+    }
     changeSize = (size: number) => {
         this.fontSize = this.fontSize + size;
     }
