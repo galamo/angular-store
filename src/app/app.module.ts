@@ -7,7 +7,7 @@ import { AppHeader } from './components/header/header.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { CountriesListComponent } from './components/countries-list/countries-list.component';
 import { CountryComponent } from './components/country/country.component';
-
+import { FormsModule } from "@angular/forms"
 @NgModule({
     declarations: [
         AppComponent,
@@ -18,7 +18,8 @@ import { CountryComponent } from './components/country/country.component';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 <div class="card">
+    <input [(ngModel)]="str" />
+    {{str}}
     <h2 class="select-button"> {{ country.name }}</h2>
     <button (click)="delme()"> del me</button>
     <h3 class="mark" *ngIf="country.borders && !country.borders.length"> No Borders </h3>
