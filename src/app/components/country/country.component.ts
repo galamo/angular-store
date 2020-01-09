@@ -9,9 +9,12 @@ import { EventEmitter } from '@angular/core';
 export class CountryComponent implements OnInit {
     @Input('my-country') country
     @Output('del') del = new EventEmitter<any>()
+    public posts: Array<string>
+    public post: string;
     public str: string;
     public hoverme: number
     constructor() {
+        this.posts = []
         this.hoverme = 50;
     }
     big() { this.hoverme = 100 }
@@ -19,6 +22,11 @@ export class CountryComponent implements OnInit {
     delme() { this.del.emit(this.country.name) }
     ngOnInit() {
     }
+
+    addPost() {
+        this.posts.push(this.post)
+    }
+
 
 
 
