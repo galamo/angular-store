@@ -1,0 +1,12 @@
+<div class="card">
+    <!-- <h2 class="select-button" (click)="selectCountry(country)">{{i}} {{  country.name }}</h2> <button
+    (click)="deleteMe(i)">X</button> -->
+
+    <h3 class="mark" *ngIf="countryObj.borders && !countryObj.borders.length"> No Borders </h3>
+    <!-- <div class="mark-currencies" *ngIf="moreThenTwoCurrencies(country)"> -->
+    <ol>
+        <li *ngFor="let currency of countryObj.currencies">
+            {{currency.code}} {{currency.symbol}}
+        </li>
+    </ol>
+</div>
