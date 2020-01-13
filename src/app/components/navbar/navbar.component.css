@@ -1,0 +1,10 @@
+.routes{
+    display: flex;
+    width: 50%;
+}
+
+.routes div {
+    flex-wrap: wrap;
+    flex-grow: 1;
+    
+}
