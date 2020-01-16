@@ -1,13 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-
-
 const INITIAL_WIDTH = 50
 
 @Component({
     selector: 'app-country',
     templateUrl: './country.component.html',
-    styleUrls: ['./country.component.css']
+    styleUrls: ['./country.component.css'],
+
 })
 export class CountryComponent implements OnInit {
     @Input() countryObj: any

@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { FavoritesService } from "../../services/favorites.service"
 
 @Component({
-  selector: 'app-add-travel',
-  templateUrl: './add-travel.component.html',
-  styleUrls: ['./add-travel.component.css']
+    selector: 'app-add-travel',
+    templateUrl: './add-travel.component.html',
+    styleUrls: ['./add-travel.component.css']
+    // providers: [FavoritesService]
 })
 export class AddTravelComponent implements OnInit {
 
-  constructor() { }
+    constructor(public favoriteService: FavoritesService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.favoriteService.setCountry("USA")
+    }
 
 }

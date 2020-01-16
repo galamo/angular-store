@@ -7,12 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RoutesLinksComponent implements OnInit {
     @Input() routes;
+    @Input() prefix;
     constructor() {
 
     }
 
     ngOnInit() {
-        console.log(this.routes)
     }
 
 }
