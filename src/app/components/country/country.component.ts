@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CountriesService } from 'src/app/services/countries/countries.service';
 
 const INITIAL_WIDTH = 50
 
@@ -14,7 +15,7 @@ export class CountryComponent implements OnInit {
     public flagWidth: number
     public comment: string;
     public comments: Array<string>
-    constructor() {
+    constructor(public countriesService: CountriesService) {
         this.flagWidth = INITIAL_WIDTH
         this.comments = [];
     }
@@ -36,6 +37,7 @@ export class CountryComponent implements OnInit {
 
     selectCountry() {
         this.countryObj.isSelected = !this.countryObj.isSelected
+        this.countriesService.addToFavorites(this.countryObj)
     }
 
 }

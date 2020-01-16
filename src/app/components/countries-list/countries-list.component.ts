@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import countriesData from "../../../countries.js"
+import { CountriesService } from 'src/app/services/countries/countries.service';
+
 @Component({
     selector: 'app-countries-list',
     templateUrl: './countries-list.component.html',
@@ -10,8 +11,8 @@ export class CountriesListComponent {
     public selectedCountry: number;
     public selectedColor: string;
     public size: string;
-    constructor() {
-        this.countries = countriesData.map(c => { return { ...c, isSelected: false } })
+    constructor(private countriesService: CountriesService) {
+        this.countries = this.countriesService.getCountries()
         this.selectedCountry = -1;
         this.selectedColor = "red"
         this.size = "40px"
@@ -28,6 +29,7 @@ export class CountriesListComponent {
     }
     selectCountry(country: any) {
         country.isSelected = !country.isSelected
+        this.countriesService.addToFavorites(country)
     }
 
 }
