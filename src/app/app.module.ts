@@ -16,6 +16,8 @@ import { AddTravelComponent } from './components/add-travel/add-travel.component
 import { TravelListComponent } from './components/travel-list/travel-list.component';
 import { RoutesLinksComponent } from './components/routes-links/routes-links.component'
 
+console.log("testteste")
+
 @NgModule({
     declarations: [
         AppComponent,
