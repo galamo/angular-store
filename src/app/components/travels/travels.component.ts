@@ -10,10 +10,11 @@ const ROUTES_TITLE = "Trips"
 export class TravelsComponent implements OnInit {
     public nestedRoutes;
     constructor() {
-        this.nestedRoutes = routes.find(route => route.title === ROUTES_TITLE && Array.isArray(route.children)).children
+
     }
 
     ngOnInit() {
+        this.nestedRoutes = routes.find(route => route.title === ROUTES_TITLE && Array.isArray(route.children)).children
     }
 
 }

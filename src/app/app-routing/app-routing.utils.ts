@@ -12,8 +12,6 @@ interface CustomRoute extends Route {
 }
 
 
-
-
 export const routes: Array<CustomRoute> = [
     { path: "", redirectTo: "countries", pathMatch: "full" },
     { path: "countries", component: CountriesListComponent, title: "CountrieS", isVisible: true },
