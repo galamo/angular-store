@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { AppHeader } from './components/header/header.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
@@ -13,7 +13,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatToolbar } from "@angular/material";
 import { AddTravelComponent } from './components/add-travel/add-travel.component';
-import { TravelListComponent } from './components/travel-list/travel-list.component'
+import { TravelListComponent } from './components/travel-list/travel-list.component';
+import { RoutesLinksComponent } from './components/routes-links/routes-links.component'
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { TravelListComponent } from './components/travel-list/travel-list.compon
         NavbarComponent,
         MatToolbar,
         AddTravelComponent,
-        TravelListComponent
+        TravelListComponent,
+        RoutesLinksComponent
     ],
     imports: [
         BrowserModule,

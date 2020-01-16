@@ -1,12 +1,5 @@
 <div>
     <h1> Travel Works! </h1>
-    <div class="routes">
-        <div>
-            <a routerLink="travel-list"> list </a>
-        </div>
-        <div>
-            <a routerLink="add-travel"> Add Travel </a>
-        </div>
-    </div>
+    <app-routes-links [routes]="nestedRoutes"></app-routes-links>
     <router-outlet></router-outlet>
 </div>
