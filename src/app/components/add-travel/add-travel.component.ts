@@ -9,10 +9,10 @@ import { FavoritesService } from "../../services/favorites.service"
 })
 export class AddTravelComponent implements OnInit {
 
-    constructor(public favoriteService: FavoritesService) { }
+    constructor() { }
 
     ngOnInit() {
-        this.favoriteService.setCountry("USA")
+        
     }
 
 }
