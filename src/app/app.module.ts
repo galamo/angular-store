@@ -7,11 +7,11 @@ import { AppHeader } from './components/header/header.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { CountriesListComponent } from './components/countries-list/countries-list.component';
 import { CountryComponent } from './components/country/country.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TravelsComponent } from './components/travels/travels.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatToolbar } from "@angular/material";
+import { MatToolbar, MatFormFieldModule, MatInputModule } from "@angular/material";
 import { AddTravelComponent } from './components/add-travel/add-travel.component';
 import { TravelListComponent } from './components/travel-list/travel-list.component';
 // import { RoutesLinksComponent } from './components/routes-links/routes-links.component'
@@ -19,6 +19,7 @@ import { FavoritesService } from './services/favorites.service';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 @NgModule({
     declarations: [
+
         AppComponent,
         AppHeader,
         UsersListComponent,
@@ -32,9 +33,12 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
         FavoritesComponent,
     ],
     imports: [
+        MatFormFieldModule,
+        MatInputModule,
         BrowserModule,
         AppRoutingModule,
         FormsModule,
+        ReactiveFormsModule,
         BrowserAnimationsModule
     ],
     providers: [],
