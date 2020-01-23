@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CountriesService } from 'src/app/services/countries/countries.service';
+import { Observable, Subject, timer } from 'rxjs';
+import { debounce, map, filter } from "rxjs/operators"
 
 const INITIAL_WIDTH = 50
 
@@ -15,12 +17,18 @@ export class CountryComponent implements OnInit {
     public flagWidth: number
     public comment: string;
     public comments: Array<string>
+    public clickSteamer:Observable<any> = new Subject<any>() 
     constructor(public countriesService: CountriesService) {
         this.flagWidth = INITIAL_WIDTH
         this.comments = [];
     }
 
     ngOnInit() {
+        const clickDebounce = this.clickSteamer.pipe(debounce(()=>{ return timer(1000)}))
+        
+        clickDebounce.subscribe(()=>{
+            console.log("data  sent to  server....")
+        })
     }
 
     delete() {
@@ -31,6 +39,7 @@ export class CountryComponent implements OnInit {
         this.flagWidth = width
     }
     addComment() {
+        (this.clickSteamer as any).next()  
         this.comments.push(this.comment)
         this.comment = "";
     }
