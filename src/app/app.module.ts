@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { AppHeader } from './components/header/header.component';
@@ -39,7 +41,8 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

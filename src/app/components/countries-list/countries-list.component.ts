@@ -12,7 +12,10 @@ export class CountriesListComponent {
     public selectedColor: string;
     public size: string;
     constructor(private countriesService: CountriesService) {
-        this.countries = this.countriesService.getCountries()
+         this.countriesService.getAPICountries().then(res=>{
+            console.info(res);
+            this.countries = res;
+        })
         this.selectedCountry = -1;
         this.selectedColor = "red"
         this.size = "40px"
