@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from "../../services/products/products.service"
+
 @Component({
     selector: 'app-products',
     templateUrl: './products.component.html',
@@ -7,7 +8,11 @@ import { ProductsService } from "../../services/products/products.service"
 })
 export class ProductsComponent implements OnInit, OnDestroy {
     public products: Array<any>
-    constructor(private productsService: ProductsService) { }
+    public dateFormat: string = "dd-MM-yyyy";
+    public searchText: string;
+    constructor(private productsService: ProductsService) {
+
+    }
 
     ngOnInit() {
         this.productsService.getProducts().subscribe((products: Array<any>) => {

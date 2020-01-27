@@ -20,7 +20,9 @@ import { TravelListComponent } from './components/travel-list/travel-list.compon
 import { FavoritesService } from './services/favorites.service';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ProductsComponent } from './components/products/products.component';
-import { MatCard } from "@angular/material"
+import { MatCard } from "@angular/material";
+import { CurrencySignPipe } from './pipes/currency-sign.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
     declarations: [
@@ -36,7 +38,11 @@ import { MatCard } from "@angular/material"
         AddTravelComponent,
         TravelListComponent,
         FavoritesComponent,
-        ProductsComponent
+        ProductsComponent,
+        CurrencySignPipe,
+        SearchPipe,
+
+
 
     ],
     imports: [

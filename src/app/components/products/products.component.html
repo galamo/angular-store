@@ -1,12 +1,27 @@
 <div>
-    <h1> products </h1>
-    <mat-card *ngFor="let p of products">
-        <mat-card-title> {{ p.productName }}</mat-card-title>
-        <mat-card-subtitle>
-            {{ p.unitPrice }}
-        </mat-card-subtitle>
 
-    </mat-card>
+    <div style="margin:auto;display: inline-block;width: 100%;text-align: center;">
+        <h1> products </h1>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Search" [(ngModel)]="searchText">
+        </mat-form-field>
+    </div>
+    <div style="display:flex;flex-wrap: wrap;">
+        <mat-card style="display: inline-block;" *ngFor="let p of products | search:searchText:'description'">
+            <mat-card-title> {{ p.productName }}</mat-card-title>
+            <mat-card-subtitle>
+                {{ p.unitPrice | currencySign: "eu" }}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                {{ p.createAt | date:dateFormat }}
+            </mat-card-subtitle>
+            <mat-card-subtitle>
+                {{ p.description }}
+            </mat-card-subtitle>
+
+        </mat-card>
+    </div>
+
 
     <br>
     <h1> productsService to order </h1>

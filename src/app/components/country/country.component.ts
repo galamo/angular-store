@@ -17,26 +17,26 @@ export class CountryComponent implements OnInit {
     public flagWidth: number
     public comment: string;
     public comments: Array<string>
-    public clickSteamer:Observable<any> = new Subject<any>() 
+    public clickSteamer: Observable<any> = new Subject<any>()
     constructor(public countriesService: CountriesService) {
         this.flagWidth = INITIAL_WIDTH
         this.comments = [];
     }
 
     ngOnInit() {
-        const clickDebounce = this.clickSteamer.pipe(debounce(()=>{ return timer(1000)}))
-        
-        clickDebounce.subscribe(()=>{
+        const clickDebounce = this.clickSteamer.pipe(debounce(() => { return timer(1000) }))
+
+        clickDebounce.subscribe(() => {
             console.log("data  sent to  server....")
         })
 
         const mouseMove = fromEvent(document, "mousemove")
-        const paint = mouseMove.pipe(filter((event:MouseEvent)=>{ return event.clientX > 500 }))    
-        paint.subscribe((event:MouseEvent)=>{
-            //some execution!! only in case of clientX > 500
-            console.log(event.clientX)
-        })
-        
+        const paint = mouseMove.pipe(filter((event: MouseEvent) => { return event.clientX > 500 }))
+        // paint.subscribe((event:MouseEvent)=>{
+        //     //some execution!! only in case of clientX > 500
+        //     console.log(event.clientX)
+        // })
+
     }
 
     delete() {
@@ -47,7 +47,7 @@ export class CountryComponent implements OnInit {
         this.flagWidth = width
     }
     addComment() {
-        (this.clickSteamer as any).next()  
+        (this.clickSteamer as any).next()
         this.comments.push(this.comment)
         this.comment = "";
     }
