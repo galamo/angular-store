@@ -19,6 +19,7 @@ import { TravelListComponent } from './components/travel-list/travel-list.compon
 // import { RoutesLinksComponent } from './components/routes-links/routes-links.component'
 import { FavoritesService } from './services/favorites.service';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { ProductsComponent } from './components/products/products.component';
 @NgModule({
     declarations: [
 
@@ -33,6 +34,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
         AddTravelComponent,
         TravelListComponent,
         FavoritesComponent,
+        ProductsComponent,
     ],
     imports: [
         MatFormFieldModule,

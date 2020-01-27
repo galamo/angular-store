@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CountriesService } from 'src/app/services/countries/countries.service';
-import { Observable, Subject, timer } from 'rxjs';
+import { Observable, Subject, timer, fromEvent } from 'rxjs';
 import { debounce, map, filter } from "rxjs/operators"
 
 const INITIAL_WIDTH = 50
@@ -29,6 +29,14 @@ export class CountryComponent implements OnInit {
         clickDebounce.subscribe(()=>{
             console.log("data  sent to  server....")
         })
+
+        const mouseMove = fromEvent(document, "mousemove")
+        const paint = mouseMove.pipe(filter((event:MouseEvent)=>{ return event.clientX > 500 }))    
+        paint.subscribe((event:MouseEvent)=>{
+            //some execution!! only in case of clientX > 500
+            console.log(event.clientX)
+        })
+        
     }
 
     delete() {

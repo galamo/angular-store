@@ -1,0 +1,11 @@
+<div>
+    <h1> products </h1>
+    <h4 *ngFor="let p of products">
+        {{ p.productName }}
+    </h4>
+    <br>
+    <h1> productsService to order </h1>
+    <h3 *ngFor="let product of productsService.productsToOrder">
+        {{ product.productName }}
+    </h3>
+</div>
