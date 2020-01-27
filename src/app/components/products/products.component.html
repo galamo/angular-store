@@ -1,8 +1,13 @@
 <div>
     <h1> products </h1>
-    <h4 *ngFor="let p of products">
-        {{ p.productName }}
-    </h4>
+    <mat-card *ngFor="let p of products">
+        <mat-card-title> {{ p.productName }}</mat-card-title>
+        <mat-card-subtitle>
+            {{ p.unitPrice }}
+        </mat-card-subtitle>
+
+    </mat-card>
+
     <br>
     <h1> productsService to order </h1>
     <h3 *ngFor="let product of productsService.productsToOrder">

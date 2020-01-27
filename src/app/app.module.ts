@@ -13,13 +13,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TravelsComponent } from './components/travels/travels.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatToolbar, MatFormFieldModule, MatInputModule } from "@angular/material";
+import { MatToolbar, MatFormFieldModule, MatInputModule, MatCardModule } from "@angular/material";
 import { AddTravelComponent } from './components/add-travel/add-travel.component';
 import { TravelListComponent } from './components/travel-list/travel-list.component';
 // import { RoutesLinksComponent } from './components/routes-links/routes-links.component'
 import { FavoritesService } from './services/favorites.service';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ProductsComponent } from './components/products/products.component';
+import { MatCard } from "@angular/material"
+
 @NgModule({
     declarations: [
 
@@ -34,7 +36,8 @@ import { ProductsComponent } from './components/products/products.component';
         AddTravelComponent,
         TravelListComponent,
         FavoritesComponent,
-        ProductsComponent,
+        ProductsComponent
+
     ],
     imports: [
         MatFormFieldModule,
@@ -44,7 +47,8 @@ import { ProductsComponent } from './components/products/products.component';
         FormsModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        HttpClientModule
+        HttpClientModule,
+        MatCardModule
     ],
     providers: [],
     bootstrap: [AppComponent]
