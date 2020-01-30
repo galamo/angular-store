@@ -13,7 +13,6 @@ export class CountriesListComponent {
     public size: string;
     constructor(private countriesService: CountriesService) {
          this.countriesService.getAPICountries().then(res=>{
-            console.info(res);
             this.countries = res;
         })
         this.selectedCountry = -1;
