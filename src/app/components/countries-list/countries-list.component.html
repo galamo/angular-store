@@ -1,9 +1,10 @@
 <div>
     <h1> Countries</h1>
     <h2> selected Country: {{selectedCountry}} </h2>
+    <h2> search: {{t}} </h2>
     <app-reactive-search></app-reactive-search>
     <div style="display:flex;flex-wrap: wrap;">
-        <app-country *ngFor="let country of countries" (delEvent)="deleteMe($event)" [countryObj]="country">
+        <app-country *ngFor="let country of countries | search:t:'name'" (delEvent)="deleteMe($event)" [countryObj]="country">
         </app-country>
     </div>
 </div>

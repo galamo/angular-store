@@ -11,10 +11,15 @@ export class CountriesListComponent {
     public selectedCountry: number;
     public selectedColor: string;
     public size: string;
+    public t:string;
     constructor(private countriesService: CountriesService) {
          this.countriesService.getAPICountries().then(res=>{
             this.countries = res;
         })
+        this.countriesService.searchTextObservChange.subscribe((value)=>{
+            this.t = value;
+        })
+        // this.t = this.countriesService.searchText;
         this.selectedCountry = -1;
         this.selectedColor = "red"
         this.size = "40px"

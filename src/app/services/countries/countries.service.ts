@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import countriesData from "../../../countries.js"
-import { Observable,of } from 'rxjs';
+import { Observable,of, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 // add in 
 @Injectable({
@@ -9,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 export class CountriesService {
     private countries: Array<any>;
     private apiCountries: Array<any>;
-
+    public searchText:string;
+    public searchTextObserv:string;
+    public searchTextObservChange:Subject<string> = new Subject<string>()
     private baseURI: string = `https://restcountries.eu/rest`;
 
     constructor(private http: HttpClient) {
@@ -26,6 +28,19 @@ export class CountriesService {
         //  }; 
 
         //  myObservable.subscribe(myObserver).unsubscribe();
+    }
+    
+    setTextSearchObservable(value:string) {
+        this.searchTextObservChange.next(value);
+    }
+
+    setText(value:string){
+        this.searchText = value
+        console.log(value)
+    }
+
+    getText(){
+        return this.searchText;
     }
 
     getCountries() { return this.countries }
