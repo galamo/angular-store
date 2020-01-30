@@ -23,6 +23,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { MatCard } from "@angular/material";
 import { CurrencySignPipe } from './pipes/currency-sign.pipe';
 import { SearchPipe } from './pipes/search.pipe';
+import { ReactiveSearchComponent } from './components/reactive-search/reactive-search.component';
 
 @NgModule({
     declarations: [
@@ -41,6 +42,7 @@ import { SearchPipe } from './pipes/search.pipe';
         ProductsComponent,
         CurrencySignPipe,
         SearchPipe,
+        ReactiveSearchComponent,
 
 
 
