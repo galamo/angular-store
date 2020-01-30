@@ -1,13 +1,8 @@
 <div>
 
-    <div style="margin:auto;display: inline-block;width: 100%;text-align: center;">
-        <h1> products </h1>
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="Search" [(ngModel)]="searchText">
-        </mat-form-field>
-    </div>
+    <app-reactive-search></app-reactive-search>
     <div style="display:flex;flex-wrap: wrap;">
-        <mat-card style="display: inline-block;" *ngFor="let p of products | search:searchText:'description'">
+        <mat-card style="display: inline-block;" *ngFor="let p of products | search:searchText:'productName'">
             <mat-card-title> {{ p.productName }}</mat-card-title>
             <mat-card-subtitle>
                 {{ p.unitPrice | currencySign: "eu" }}

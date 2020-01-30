@@ -44,8 +44,6 @@ import { ReactiveSearchComponent } from './components/reactive-search/reactive-s
         SearchPipe,
         ReactiveSearchComponent,
 
-
-
     ],
     imports: [
         MatFormFieldModule,

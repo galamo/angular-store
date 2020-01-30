@@ -11,7 +11,7 @@ export class ProductsService {
     public pro = new Subject<Array<any>>();
     constructor(private httpClient: HttpClient) {
     }
-
+    
     getProductsToOrder() {
         return this.pro;
     }
@@ -21,4 +21,5 @@ export class ProductsService {
             return result;
         }))
     }
+    
 }
